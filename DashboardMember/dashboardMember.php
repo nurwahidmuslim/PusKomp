@@ -16,7 +16,7 @@ if(!isset($_SESSION["signIn"]) ) {
      <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
      <title>Member Dashboard</title>
 </head>
-  <body>
+<body class="d-flex flex-column min-vh-100">
      <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
@@ -45,7 +45,7 @@ if(!isset($_SESSION["signIn"]) ) {
       </div>
     </nav>
     
-    <div class="mt-5 p-4">
+    <div class="container mt-5 flex-grow-1 pt-5 mb-5">
       <?php
       // Mendapatkan tanggal dan waktu saat ini
       $date = date('Y-m-d H:i:s'); // Format tanggal dan waktu default (tahun-bulan-tanggal jam:menit:detik)
@@ -87,7 +87,7 @@ if(!isset($_SESSION["signIn"]) ) {
     </div>
   </div> 
       
-  <footer class="shadow-lg bg-subtle p-3">
+  <footer class="shadow-lg bg-subtle p-3 mt-auto">
     <div class="container-fluid d-flex justify-content-center">
       <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
     </div>

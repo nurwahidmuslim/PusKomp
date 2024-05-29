@@ -38,16 +38,8 @@ if(isset($_POST["search"]) ) {
       </div>
     </nav>
     
-    <div class="container mt-5 flex-grow-1">
-      <div class="mt-5 alert alert-primary" role="alert">Riwayat transaksi Pengembalian Buku Anda - <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["member"]["nama"]); ?></span></div>
-    <!--search engine 
-     <form action="" method="post">
-       <div class="searchEngine">
-         <input type="text" name="keyword" id="keyword" placeholder="cari judul atau id buku...">
-         <button type="submit" name="search">Search</button>
-       </div>
-      </form> -->
-      
+    <div class="container mt-5 flex-grow-1 pt-5 mb-5">
+      <div class="mt-5 alert alert-primary" role="alert">Riwayat transaksi Pengembalian Buku Anda - <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["member"]["nama"]); ?></span></div>  
     <div class="table-responsive mt-3">
     <table class="table table-striped table-hover text-center">
       <thead class="text-center">

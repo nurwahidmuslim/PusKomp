@@ -23,7 +23,7 @@ WHERE pengembalian.npm = $akunMember && pengembalian.denda > 0");
      <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
      <title>Transaksi Denda Buku || Member</title>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
@@ -33,7 +33,7 @@ WHERE pengembalian.npm = $akunMember && pengembalian.denda > 0");
         <a class="btn btn-tertiary" href="../dashboardMember.php">Dashboard</a>
       </div>
     </nav>
-  <div class="p-4 mt-5">
+    <div class="container mt-5 flex-grow-1 pt-5 mb-5">
     <div class="mt-5 alert alert-primary" role="alert">Riwayat transaksi Denda Anda - <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["member"]["nama"]); ?></span></div>
 
   <div class="table-responsive mt-3">
@@ -68,7 +68,7 @@ WHERE pengembalian.npm = $akunMember && pengembalian.denda > 0");
     </div>
   </div>
   
-  <footer class="shadow-lg bg-subtle p-3">
+  <footer class="shadow-lg bg-subtle p-3 mt-auto">
     <div class="container-fluid d-flex justify-content-center">
       <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
     </div>

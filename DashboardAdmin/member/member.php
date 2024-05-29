@@ -24,7 +24,7 @@ if(isset($_POST["search"]) ) {
     <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
     <title>Member terdaftar</title>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
@@ -35,7 +35,7 @@ if(isset($_POST["search"]) ) {
       </div>
     </nav>
     
-    <div class="p-4 mt-5">
+    <div class="container mt-5 flex-grow-1 pt-5 mb-5">
       <!--search engine --->
       <form action="" method="post" class="mt-5">
         <div class="input-group d-flex justify-content-end mb-3">
@@ -75,7 +75,7 @@ if(isset($_POST["search"]) ) {
       </div>
     </div>
   
-    <footer class="shadow-lg bg-subtle p-3">
+    <footer class="shadow-lg bg-subtle p-3 mt-auto">
     <div class="container-fluid d-flex justify-content-center">
       <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
     </div>

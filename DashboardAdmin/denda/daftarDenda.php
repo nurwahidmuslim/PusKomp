@@ -16,7 +16,7 @@ WHERE pengembalian.denda > 0");
      <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
      <title>Kelola denda buku || admin</title>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
@@ -27,7 +27,7 @@ WHERE pengembalian.denda > 0");
       </div>
     </nav>
     
-    <div class="p-4 mt-5">
+    <div class="container mt-5 flex-grow-1 pt-5 mb-5">
       <div class="mt-5">
         <caption>List of denda</caption>
           <div class="table-responsive mt-3">
@@ -59,7 +59,7 @@ WHERE pengembalian.denda > 0");
    </div>
   </div>
   
-  <footer class="shadow-lg bg-subtle p-3">
+  <footer class="shadow-lg bg-subtle p-3 mt-auto">
     <div class="container-fluid d-flex justify-content-center">
       <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
     </div>

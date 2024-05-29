@@ -40,7 +40,7 @@ WHERE pengembalian.id_pengembalian = $dendaMember");
      <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
      <title>Form Bayar Denda || Member</title>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
@@ -51,7 +51,7 @@ WHERE pengembalian.id_pengembalian = $dendaMember");
       </div>
     </nav>
     
-  <div class="p-4 mt-5">
+    <div class="container mt-5 flex-grow-1 pt-5 mb-5">
     <div class="mt-5 card p-3 mb-5">
     <form action="" method="post">
     <h3>Form bayar denda</h3>
@@ -89,11 +89,11 @@ WHERE pengembalian.id_pengembalian = $dendaMember");
     </div>
     </div>
     
-    <footer class="shadow-lg bg-subtle p-3">
-    <div class="container-fluid d-flex justify-content-center">
-      <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
-    </div>
-  </footer>
+    <footer class="shadow-lg bg-subtle p-3 mt-auto">
+      <div class="container-fluid d-flex justify-content-center">
+        <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
+      </div>
+    </footer>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>

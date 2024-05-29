@@ -51,7 +51,7 @@ $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'sains'");
       gap: 1.5rem;
     }
   </style>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
@@ -62,7 +62,7 @@ $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'sains'");
       </div>
     </nav>
     
-     <div class="p-4 mt-5">
+    <div class="container mt-5 flex-grow-1 pt-5 mb-5">
        <!--Btn filter data kategori buku-->
       <div class="d-flex gap-2 mt-5 justify-content-center">
       <form action="" method="post">
@@ -79,12 +79,15 @@ $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'sains'");
         </form>
        </div>
        
-       <form action="" method="post" class="mt-5">
-       <div class="input-group d-flex justify-content-end mb-3">
-         <input class="border p-2 rounded rounded-end-0 bg-tertiary" type="text" name="keyword" id="keyword" placeholder="cari judul atau kategori buku...">
-         <button class="border border-start-0 bg-light rounded rounded-start-0" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-       </div>
-      </form>
+      <div class="d-flex justify-content-center">
+        <form action="" method="post" class="mt-3 mb-3">
+          <div class="input-group mb-3">
+            <input class="border p-2 rounded rounded-end-0 bg-tertiary" type="text" name="keyword" id="keyword" placeholder="Cari Buku...">
+            <button class="border border-start-0 bg-light rounded rounded-start-0" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </form>
+      </div>
+
       
       <!--Card buku-->
     <div class="layout-card-custom">
@@ -106,11 +109,11 @@ $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'sains'");
       
      </div>
      
-     <footer class="shadow-lg bg-subtle p-3">
-      <div class="container-fluid d-flex justify-content-center">
-        <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
-      </div>
-    </footer>
+     <footer class="shadow-lg bg-subtle p-3 mt-auto">
+        <div class="container-fluid d-flex justify-content-center">
+          <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
+        </div>
+      </footer>
       
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     

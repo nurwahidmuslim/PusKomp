@@ -33,7 +33,7 @@ WHERE peminjaman.npm = $akunMember");
       </div>
     </nav>
     
-    <div class="container mt-5 flex-grow-1">
+    <div class="container mt-5 flex-grow-1 pt-5 mb-5">
       <div class="mt-5 alert alert-primary" role="alert">Riwayat transaksi Peminjaman Buku Anda - <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["member"]["nama"]); ?></span></div>
     
       <div class="table-responsive mt-3">
