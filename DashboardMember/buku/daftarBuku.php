@@ -68,11 +68,13 @@ $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'sains'");
       <form action="" method="post">
         <div class="layout-card-custom">
          <button class="btn btn-primary" type="submit">Semua</button>
-         <button type="submit" name="informatika" class="btn btn-outline-primary">Informatika</button>
-         <button type="submit" name="bisnis" class="btn btn-outline-primary">Bisnis</button>
-         <button type="submit" name="filsafat" class="btn btn-outline-primary">Filsafat</button>
-         <button type="submit" name="novel" class="btn btn-outline-primary">Novel</button>
-         <button type="submit" name="sains" class="btn btn-outline-primary">Sains</button>
+         <button type="submit" name="Pemrograman" class="btn btn-outline-primary">Pemrograman</button>
+         <button type="submit" name="Basis Data" class="btn btn-outline-primary">Basis Data</button>
+         <button type="submit" name="Robotik & IoT" class="btn btn-outline-primary">Robotik & IoT</button>
+         <button type="submit" name="Jaringan & Keamanan" class="btn btn-outline-primary">Jaringan & Keamanan</button>
+         <button type="submit" name="Kecerdasan Buatan" class="btn btn-outline-primary">Kecerdasan Buatan</button>
+         <button type="submit" name="Pengembangan Perangkat Lunak" class="btn btn-outline-primary">Pengembangan Perangkat Lunak</button>
+         <button type="submit" name="Sistem Operasi" class="btn btn-outline-primary">Sistem Operasi</button>
          </div>
         </form>
        </div>
@@ -105,10 +107,10 @@ $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'sains'");
      </div>
      
      <footer class="shadow-lg bg-subtle p-3">
-    <div class="container-fluid d-flex justify-content-center">
-      <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
-    </div>
-  </footer>
+      <div class="container-fluid d-flex justify-content-center">
+        <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
+      </div>
+    </footer>
       
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
