@@ -40,11 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $allowedfileExtensions = array('jpg', 'gif', 'png', 'jpeg');
         if (in_array($fileExtension, $allowedfileExtensions)) {
-            $uploadFileDir = '../../foto_member/';
+            $uploadFileDir = 'foto/';
             $dest_path = $uploadFileDir . $newFileName;
 
             if (move_uploaded_file($fileTmpPath, $dest_path)) {
-                $foto = 'foto_member/' . $newFileName;
+                $foto = 'foto/' . $newFileName;
             } else {
                 echo "<script>alert('There was an error moving the uploaded file.');</script>";
             }
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <div class="card shadow p-4 mt-5 mb-5">
             <div class="text-center">
-                <img src="<?php echo '../../' . htmlspecialchars($user['foto']); ?>" alt="Profile Image" class="profile-img mb-3">
+                <img src="<?php echo htmlspecialchars($user['foto']); ?>" alt="Profile Image" class="profile-img mb-3">
                 <h1 class="fw-bold">Edit Profile</h1>
                 <hr>
             </div>

@@ -24,12 +24,12 @@ if (!isset($_SESSION["signIn"])) {
             </a>
             <div class="dropdown">
                 <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="<?php echo '../' . htmlspecialchars($_SESSION['member']['foto']); ?>" alt="memberLogo" width="40px" class="rounded-circle">
+                    <img src="<?php echo htmlspecialchars($_SESSION['member']['foto']); ?>" alt="memberLogo" width="40px" class="rounded-circle">
                 </button>
                 <ul style="margin-left: -7rem;" class="dropdown-menu position-absolute mt-2 p-2">
                     <li>
                         <a class="dropdown-item text-center" href="#">
-                            <img src="<?php echo '../' . htmlspecialchars($_SESSION['member']['foto']); ?>" alt="memberLogo" width="30px" class="rounded-circle">
+                            <img src="<?php echo htmlspecialchars($_SESSION['member']['foto']); ?>" alt="memberLogo" width="30px" class="rounded-circle">
                         </a>
                     </li>
                     <li>

@@ -10,6 +10,7 @@ if(isset($_SESSION["signIn"])) {
 require "../../loginSystem/connect.php";
 
 $nama = ""; // Initialize the variable to hold the member's name
+$foto = "";
 
 if(isset($_POST["signIn"])) {
   
@@ -22,6 +23,7 @@ if(isset($_POST["signIn"])) {
     // Fetch the member data
     $member = mysqli_fetch_assoc($result);
     $nama = $member["nama"];
+    $foto = $member["foto"];
     
     // Check password 
     if(password_verify($password, $member["password"])) {
@@ -29,6 +31,7 @@ if(isset($_POST["signIn"])) {
       $_SESSION["signIn"] = true;
       $_SESSION["member"]["npm"] = $npm;
       $_SESSION["member"]["nama"] = $nama;
+      $_SESSION["member"]["foto"] = $foto;
       header("Location: ../../DashboardMember/dashboardMember.php");
       exit;
     }

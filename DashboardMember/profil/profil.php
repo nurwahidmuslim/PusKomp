@@ -23,7 +23,7 @@ if (!$user) {
 }
 
 // Set default profile image if not available
-$profileImage = $user['foto'] ? '../../' . htmlspecialchars($user['foto']) : '../../assets/memberLogo.png';
+$profileImage = $user['foto'] ? htmlspecialchars($user['foto']) : '../../assets/memberLogo.png';
 ?>
 
 <!DOCTYPE html>
