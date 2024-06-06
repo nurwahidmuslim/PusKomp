@@ -70,18 +70,18 @@ if (!isset($_SESSION["signIn"])) {
             <div class="mt-4 p-3">
                 <div class="row gap-2">
                     <div class="col bg-dark p-5 rounded">
-                        <a class="text-center text-decoration-none fs-2" href="buku/daftarBuku.php" style="color: #FF9800;">Daftar Buku</a>
+                        <a class="text-center text-decoration-none fs-2" href="buku/daftarBuku.php" style="color: rgb(197, 197, 241);">Daftar Buku</a>
                     </div>
                     <div class="col bg-dark p-5 rounded">
-                        <a class="text-center text-decoration-none fs-2" href="formPeminjaman/TransaksiPeminjaman.php" style="color: #FF9800;">Peminjaman</a>
+                        <a class="text-center text-decoration-none fs-2" href="formPeminjaman/TransaksiPeminjaman.php" style="color: rgb(197, 197, 241);">Peminjaman</a>
                     </div>
                 </div>
                 <div class="row gap-2 mt-2">
                     <div class="col bg-dark p-5 rounded">
-                        <a class="text-center text-decoration-none fs-2" href="formPeminjaman/TransaksiPengembalian.php" style="color: #FF9800;">Pengembalian</a>
+                        <a class="text-center text-decoration-none fs-2" href="formPeminjaman/TransaksiPengembalian.php" style="color: rgb(197, 197, 241);">Pengembalian</a>
                     </div>
                     <div class="col bg-dark p-5 rounded">
-                        <a class="text-center text-decoration-none fs-2" href="formPeminjaman/TransaksiDenda.php" style="color: #FF9800;">Denda</a>
+                        <a class="text-center text-decoration-none fs-2" href="formPeminjaman/TransaksiDenda.php" style="color: rgb(197, 197, 241);">Denda</a>
                     </div>
                 </div>
             </div>

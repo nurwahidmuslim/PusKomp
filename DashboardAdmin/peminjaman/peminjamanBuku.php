@@ -29,7 +29,7 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
 
     <div class="container mt-5 flex-grow-1 pt-5 mb-5">
       <div class="mt-5">
-        <caption>List of Peminjaman</caption>
+        <caption>Data Peminjaman</caption>
         <div class="table-responsive mt-3">
           <table class="table table-striped table-hover text-center">
             <thead>
@@ -41,6 +41,7 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
                 <th class="bg-primary text-light">Nama</th>
                 <th class="bg-primary text-light">Tanggal Peminjaman</th>
                 <th class="bg-primary text-light">Tanggal Pengembalian</th>
+                <th class="bg-primary text-light">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -53,6 +54,9 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
                 <td><?= $item["nama"]; ?></td>
                 <td><?= $item["tgl_peminjaman"]; ?></td>
                 <td><?= $item["tgl_pengembalian"]; ?></td>
+                <td>
+                  <a href="editPeminjaman.php?id=<?= $item["id_peminjaman"]; ?>" class="btn btn-primary">Edit</a>
+                </td>
               </tr>
               <?php endforeach;?>
             </tbody>
@@ -62,10 +66,10 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
     </div>
   
     <footer class="shadow-lg bg-subtle p-3 mt-auto">
-    <div class="container-fluid d-flex justify-content-center">
-      <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
-    </div>
-  </footer>
+      <div class="container-fluid d-flex justify-content-center">
+        <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
+      </div>
+    </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>

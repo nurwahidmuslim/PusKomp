@@ -176,6 +176,14 @@ function deleteMember($npmMember) {
   return mysqli_affected_rows($connection);
 }
 
+function updatePeminjaman($id, $id_buku, $npm, $tgl_peminjaman, $tgl_pengembalian) {
+  global $connection;
+
+  $updatePeminjaman = "UPDATE peminjaman SET id_buku = '$id_buku', npm = '$npm', tgl_peminjaman = '$tgl_peminjaman', tgl_pengembalian = '$tgl_pengembalian' WHERE id_peminjaman = $id";
+  mysqli_query($connection, $updatePeminjaman);
+  return mysqli_affected_rows($connection);
+}
+
 // Hapus history pengembalian data BUKU
 function deleteDataPengembalian($idPengembalian) {
   global $connection;
@@ -229,13 +237,13 @@ function pengembalian($dataBuku) {
   global $connection;
   
   // Variabel pengembalian
-  $idPeminjaman = $dataBuku["id_peminjaman"];
-  $idBuku = $dataBuku["id_buku"];
-  $npm = $dataBuku["npm"];
-  $tenggatPengembalian = $dataBuku["tgl_pengembalian"];
-  $bukuKembali = $dataBuku["buku_kembali"];
-  $keterlambatan = $dataBuku["keterlambatan"];
-  $denda = $dataBuku["denda"];
+  $idPeminjaman = mysqli_real_escape_string($connection, $dataBuku["id_peminjaman"]);
+  $idBuku = mysqli_real_escape_string($connection, $dataBuku["id_buku"]);
+  $npm = mysqli_real_escape_string($connection, $dataBuku["npm"]);
+  $tenggatPengembalian = mysqli_real_escape_string($connection, $dataBuku["tgl_pengembalian"]);
+  $bukuKembali = mysqli_real_escape_string($connection, $dataBuku["buku_kembali"]);
+  $keterlambatan = mysqli_real_escape_string($connection, $dataBuku["keterlambatan"]);
+  $denda = mysqli_real_escape_string($connection, $dataBuku["denda"]);
   
   // Start transaction
   mysqli_begin_transaction($connection);
@@ -249,16 +257,18 @@ function pengembalian($dataBuku) {
     }
 
     // Delete borrowing record
-    $hapusDataPeminjam = "DELETE FROM peminjaman WHERE id_peminjaman = $idPeminjaman";
-    if (!mysqli_query($connection, $hapusDataPeminjam)) {
-      throw new Exception('Gagal menghapus data peminjaman: ' . mysqli_error($connection));
-    }
+    $hapusDataPeminjam = "DELETE FROM peminjaman WHERE id_peminjaman = ?";
+    $stmtDelete = mysqli_prepare($connection, $hapusDataPeminjam);
+    mysqli_stmt_bind_param($stmtDelete, "i", $idPeminjaman);
+    mysqli_stmt_execute($stmtDelete);
+    mysqli_stmt_close($stmtDelete);
 
     // Insert return record
-    $queryPengembalian = "INSERT INTO pengembalian (id_peminjaman, id_buku, npm, buku_kembali, keterlambatan, denda) VALUES ('$idPeminjaman', '$idBuku', '$npm', '$bukuKembali', '$keterlambatan', '$denda')";
-    if (!mysqli_query($connection, $queryPengembalian)) {
-      throw new Exception('Gagal memasukkan data pengembalian: ' . mysqli_error($connection));
-    }
+    $queryPengembalian = "INSERT INTO pengembalian (id_peminjaman, id_buku, npm, buku_kembali, keterlambatan, denda) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmtInsert = mysqli_prepare($connection, $queryPengembalian);
+    mysqli_stmt_bind_param($stmtInsert, "iissii", $idPeminjaman, $idBuku, $npm, $bukuKembali, $keterlambatan, $denda);
+    mysqli_stmt_execute($stmtInsert);
+    mysqli_stmt_close($stmtInsert);
 
     // Commit transaction
     mysqli_commit($connection);
