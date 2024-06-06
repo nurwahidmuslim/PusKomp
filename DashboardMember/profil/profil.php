@@ -3,7 +3,7 @@ session_start();
 require "../../loginSystem/connect.php";
 
 if (!isset($_SESSION["signIn"])) {
-    header("Location: ../sign/member/sign_in.php");
+    header("Location: ../../sign/member/sign_in.php");
     exit;
 }
 
