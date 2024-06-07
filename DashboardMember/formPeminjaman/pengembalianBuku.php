@@ -37,6 +37,30 @@ if(isset($_POST["kembalikan"]) ) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
      <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
      <title>Form Pengembalian Buku || Member</title>
+     <style>
+     body {
+          background-color: rgb(197, 197, 241);
+      }
+      .bg-purple {
+        background-color: #6a0dad !important;
+    }
+    .btn-batal {
+      background-color: rgb(113, 113, 193); 
+      color: white; 
+    }
+    .btn-batal:hover {
+      background-color: rgb(170, 166, 199);
+      color: white; 
+    }
+    .btn-kembalikan {
+      background-color: rgb(158, 158, 209);
+      color: white;
+    }
+    .btn-kembalikan:hover {
+      background-color: rgb(158, 158, 209);
+      color: white;
+    }
+    </style>
   </head>
   <body>
     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
@@ -106,8 +130,8 @@ if(isset($_POST["kembalikan"]) ) {
        <input type="number" class="form-control" name="denda" id="denda" readonly>
     </div>
   </div>
-  <a class="btn btn-danger" href="TransaksiPeminjaman.php"> Batal</a>
-  <button type="submit" class="btn btn-success" name="kembalikan">Kembalikan</button>
+  <a class="btn btn-danger btn-batal" href="TransaksiPeminjaman.php"> Batal</a>
+  <button type="submit" class="btn btn-success btn-kembalikan" name="kembalikan">Kembalikan</button>
     </form>
     </div>
   </div>

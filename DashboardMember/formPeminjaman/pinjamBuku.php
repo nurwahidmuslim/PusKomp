@@ -40,11 +40,33 @@ if(isset($_POST["pinjam"]) ) {
      <title>Form pinjam Buku || Member</title>
   </head>
   <style>
+      body {
+          background-color: rgb(197, 197, 241);
+      }
+      .bg-purple {
+        background-color: #6a0dad !important;
+    }
     .layout-card-custom {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
+    }
+    .btn-batal {
+      background-color: rgb(113, 113, 193); 
+      color: white; 
+    }
+    .btn-batal:hover {
+      background-color: rgb(170, 166, 199);
+      color: white; 
+    }
+    .btn-pinjam {
+      background-color: rgb(158, 158, 209);
+      color: white;
+    }
+    .btn-pinjam:hover {
+      background-color: rgb(158, 158, 209);
+      color: white;
     }
   </style>
   <body>
@@ -106,7 +128,7 @@ if(isset($_POST["pinjam"]) ) {
     <div class="card mt-4">
       <h5 class="card-header">Data lengkap Member</h5>
       <div class="card-body d-flex flex-wrap gap-4 justify-content-center">
-        <p><img src="../../assets/memberLogo.png" width="150px"></p>
+        <p><img src="../../imgDB/profile-user.png" width="150px"></p>
         <form action="" method="post">
           <?php foreach ($dataMember as $item) : ?>
           <div class="input-group mb-3">
@@ -157,8 +179,8 @@ if(isset($_POST["pinjam"]) ) {
             <input type="date" name="tgl_pengembalian" id="tgl_pengembalian" class="form-control" placeholder="tgl_pengembalian" aria-label="tgl_pengembalian" aria-describedby="basic-addon1" readonly>
       </div>
       
-    <a class="btn btn-danger" href="../buku/daftarBuku.php"> Batal</a>
-    <button type="submit" class="btn btn-success" name="pinjam">Pinjam</button>
+    <a class="btn btn-danger btn-batal" href="../buku/daftarBuku.php"> Batal</a>
+    <button type="submit" class="btn btn-success btn-pinjam" name="pinjam">Pinjam</button>
     </form>
     </div>
     </div>

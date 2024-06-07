@@ -15,6 +15,22 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
     <title>Kelola peminjaman buku || admin</title>
+    <style>
+      body {
+          background-color: rgb(197, 197, 241);
+      }
+      .bg-purple {
+          background-color: #6a0dad !important;
+      }
+      .btn-edit {
+      background-color: rgb(113, 113, 193); 
+      color: white; 
+    }
+    .btn-edit:hover {
+      background-color: rgb(170, 166, 199);
+      color: white; 
+    }
+      </style>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
@@ -34,14 +50,14 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
           <table class="table table-striped table-hover text-center">
             <thead>
               <tr>
-                <th class="bg-primary text-light">Id Peminjaman</th>
-                <th class="bg-primary text-light">Id Buku</th>
-                <th class="bg-primary text-light">Judul Buku</th>
-                <th class="bg-primary text-light">NPM</th>
-                <th class="bg-primary text-light">Nama</th>
-                <th class="bg-primary text-light">Tanggal Peminjaman</th>
-                <th class="bg-primary text-light">Tanggal Pengembalian</th>
-                <th class="bg-primary text-light">Action</th>
+                <th class="bg-purple text-light">Id Peminjaman</th>
+                <th class="bg-purple text-light">Id Buku</th>
+                <th class="bg-purple text-light">Judul Buku</th>
+                <th class="bg-purple text-light">NPM</th>
+                <th class="bg-purple text-light">Nama</th>
+                <th class="bg-purple text-light">Tanggal Peminjaman</th>
+                <th class="bg-purple text-light">Tanggal Pengembalian</th>
+                <th class="bg-purple text-light">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -55,7 +71,7 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
                 <td><?= $item["tgl_peminjaman"]; ?></td>
                 <td><?= $item["tgl_pengembalian"]; ?></td>
                 <td>
-                  <a href="editPeminjaman.php?id=<?= $item["id_peminjaman"]; ?>" class="btn btn-primary">Edit</a>
+                  <a href="editPeminjaman.php?id=<?= $item["id_peminjaman"]; ?>" class="btn btn-primary btn-edit">Edit</a>
                 </td>
               </tr>
               <?php endforeach;?>

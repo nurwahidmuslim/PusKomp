@@ -26,6 +26,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
     <title>Edit Peminjaman || admin</title>
+    <style>
+      body {
+          background-color: rgb(197, 197, 241);
+      }
+      .bg-purple {
+          background-color: #6a0dad !important;
+      }
+      .btn-kembali {
+      background-color: rgb(113, 113, 193); 
+      color: white; 
+    }
+    .btn-kembali:hover {
+      background-color: rgb(170, 166, 199);
+      color: white; 
+    }
+    .btn-update {
+      background-color: rgb(158, 158, 209);
+      border-color:rgb(158, 158, 209);
+      color: white;
+    }
+    .btn-update:hover {
+      background-color: rgb(150, 150, 209);
+      border-color:rgb(150, 150, 209);
+      color: white;
+    }
+      </style>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
@@ -48,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           </div>
           <div class="mb-3">
             <label for="npm" class="form-label">NPM</label>
-            <input type="text" class="form-control" id="npm" name="npm" value="<?= $peminjaman['npm']; ?>" readonly>
+            <input type="text" class="form-control" id="npm" name="npm" value="<?= $peminjaman['npm']; ?>">
           </div>
           <div class="mb-3">
             <label for="tgl_peminjaman" class="form-label">Tanggal Peminjaman</label>
@@ -58,8 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="tgl_pengembalian" class="form-label">Tanggal Pengembalian</label>
             <input type="date" class="form-control" id="tgl_pengembalian" name="tgl_pengembalian" value="<?= $peminjaman['tgl_pengembalian']; ?>" required>
           </div>
-          <button type="submit" class="btn btn-primary">Update</button>
-          <a href="peminjamanBuku.php" class="btn btn-secondary">Kembali</a>
+          <button type="submit" class="btn btn-primary btn-update">Update</button>
+          <a href="peminjamanBuku.php" class="btn btn-secondary btn-kembali">Kembali</a>
         </form>
       </div>
     </div>
