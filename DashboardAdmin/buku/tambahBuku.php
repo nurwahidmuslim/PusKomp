@@ -27,11 +27,36 @@ if(isset($_POST["tambah"]) ) {
      <title>Tambah buku || Admin</title>
   </head>
   <style>
+    body {
+        background-color: rgb(197, 197, 241);
+      }
     .custom-css-form {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
     }
+  .btn-tambah {
+    background-color: rgb(192, 192, 243);
+    border-color: rgb(192, 192, 243);
+    color: white;
+  }
+  .btn-tambah:hover {
+    background-color:rgb(170, 166, 199);
+    border-color: rgb(170, 166, 199);
+    color: white;
+  }
+
+  /* Untuk tombol Reset */
+  .btn-reset {
+    background-color: rgb(113, 113, 193);
+    border-color:rgb(113, 113, 193);
+    color: white; /* Ubah warna teks jika perlu */
+  }
+  .btn-reset:hover {
+    background-color: rgb(170, 166, 199);
+    border-color:rgb(170, 166, 199);
+    color: white; /* Ubah warna teks jika perlu */
+  }
   </style>
   <body>  
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
@@ -49,7 +74,7 @@ if(isset($_POST["tambah"]) ) {
           <a class="nav-link active" aria-current="page" href="../dashboardAdmin.php">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-success" href="daftarBuku.php">Browse</a>
+          <a class="nav-link text-success text-black" href="daftarBuku.php">Browse</a>
         </li>
       </ul>
     </div>
@@ -58,7 +83,7 @@ if(isset($_POST["tambah"]) ) {
 
     <div class="container p-3 mt-5">
       <div class="card p-2 mt-5">
-      <h1 class="text-center fw-bold p-3">Form Tambah buku</h1>
+      <h1 class="text-center fw-bold p-3">Tambah Buku</h1>
       <form action="" method="post" enctype="multipart/form-data" class="mt-3 p-2">
 
         <div class="custom-css-form">
@@ -115,8 +140,8 @@ if(isset($_POST["tambah"]) ) {
           <label for="floatingTextarea2">Sinopsis</label>
           </div>
           
-      <button class="btn btn-success" type="submit" name="tambah">Tambah</button>
-      <input type="reset" class="btn btn-warning text-light" value="Reset">
+          <button class="btn btn-success btn-tambah" type="submit" name="tambah">Tambah</button>
+          <input type="reset" class="btn btn-warning text-light btn-reset" value="Reset">
       </form>
     </div>
   </div>
