@@ -218,11 +218,12 @@ function pinjamBuku($dataBuku) {
     }
   }
 
-  // cek batas user meminjam buku berdasarkan nisn
-  $npmResult = mysqli_query($connection, "SELECT npm FROM peminjaman WHERE npm = $npm");
-  if(mysqli_fetch_assoc($npmResult)) {
+  // cek batas user meminjam buku berdasarkan npm
+  $npmResult = mysqli_query($connection, "SELECT COUNT(*) AS jumlahPinjam FROM peminjaman WHERE npm = $npm");
+  $row = mysqli_fetch_assoc($npmResult);
+  if ($row["jumlahPinjam"] >= 2) {
     echo "<script>
-    alert('Anda sudah meminjam buku, Harap kembalikan dahulu buku yg anda pinjam!');
+    alert('Anda sudah meminjam 2 buku, Harap kembalikan dahulu buku yg anda pinjam!');
     </script>";
     return 0;
   }
