@@ -16,77 +16,110 @@ if(isset($_POST["search"]) ) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-     <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
-     <title>Kelola buku || Admin</title>
+    <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
+    <title>Kelola buku || Admin</title>
+    <style>
+      body {
+        background-color: rgb(197, 197, 241);
+      }
+      .layout-card-custom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      .btn-edit {
+        background-color: rgb(192, 192, 243);
+        color: white;
+      }
+      .btn-edit:hover {
+        background-color: rgb(170, 166, 199);
+        color: white;
+      }
+      .btn-delete {
+        background-color: rgb(113, 113, 193);
+        color: white;
+      }
+      .btn-delete:hover {
+        background-color: rgb(170, 166, 199);
+        color: white;
+      }
+      .btn-dashboard {
+  background-color: rgb(192, 192, 243);
+  color: white;
+}
+
+.btn-dashboard:hover {
+  background-color: rgb(170, 166, 199);
+  color: white;
+}
+
+.btn-tambah {
+  background-color: rgb(113, 113, 193);
+  color: white;
+}
+
+.btn-tambah:hover {
+  background-color: rgb(170, 166, 199);
+  color: white;
+}
+
+    </style>
   </head>
-  <style>
-    .layout-card-custom {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-  </style>
   <body>
-  <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="../../assets/logoNav.png" alt="logo" width="120px">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../../assets/logoNav.png" alt="logo" width="120px">
         </a>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../dashboardAdmin.php">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-success" href="tambahBuku.php">Tambah Buku</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../dashboardAdmin.php">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success text-black" href="tambahBuku.php">Tambah Buku</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     
-<div class="p-4 mt-4">
+    <div class="p-4 mt-4">
       <!--search engine --->
-     <form action="" method="post" class="mt-5">
-       <div class="input-group d-flex justify-content-end mb-3">
-         <input class="border p-2 rounded rounded-end-0 bg-tertiary" type="text" name="keyword" id="keyword" placeholder="cari data buku...">
-         <button class="border border-start-0 bg-light rounded rounded-start-0" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-       </div>
+      <form action="" method="post" class="mt-5">
+        <div class="input-group d-flex justify-content-end mb-3">
+          <input class="border p-2 rounded rounded-end-0 bg-tertiary" type="text" name="keyword" id="keyword" placeholder="cari data buku...">
+          <button class="border border-start-0 bg-light rounded rounded-start-0" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
       </form>
        
-       <!--Card buku-->
-       <div class="layout-card-custom">
-       <?php foreach ($buku as $item) : ?>
-       <div class="card" style="width: 15rem;">
-         <img src="../../imgDB/<?= $item["cover"]; ?>" class="card-img-top" alt="coverBuku" height="250px">
-         <div class="card-body">
-           <h5 class="card-title"><?= $item["judul"]; ?></h5>
+      <!--Card buku-->
+      <div class="layout-card-custom">
+        <?php foreach ($buku as $item) : ?>
+        <div class="card" style="width: 15rem;">
+          <img src="../../imgDB/<?= $item["cover"]; ?>" class="card-img-top" alt="coverBuku" height="250px">
+          <div class="card-body">
+            <h5 class="card-title"><?= $item["judul"]; ?></h5>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Kategori : <?= $item["kategori"]; ?></li>
             <li class="list-group-item">Id Buku : <?= $item["id_buku"]; ?></li>
           </ul>
-        <div class="card-body">
-          <a class="btn btn-success" href="updateBuku.php?idReview=<?= $item["id_buku"]; ?>" id="review">Edit</a>
-          
-          <a class="btn btn-danger" href="deleteBuku.php?id=<?= $item["id_buku"]; ?>" onclick="return confirm('Yakin ingin menghapus data buku ? ');">Delete</a>
+          <div class="card-body">
+            <a class="btn btn-edit" href="updateBuku.php?idReview=<?= $item["id_buku"]; ?>" id="review">Edit</a>
+            <a class="btn btn-delete" href="deleteBuku.php?id=<?= $item["id_buku"]; ?>" onclick="return confirm('Yakin ingin menghapus data buku ? ');">Delete</a>
           </div>
         </div>
-       <?php endforeach; ?>
-       </div>
+        <?php endforeach; ?>
       </div>
-      
-      <footer class="shadow-lg bg-subtle p-3">
-    <div class="container-fluid d-flex justify-content-center">
-      <p class="mt-2"><span class="text-primary">Ilmu Komputer Universitas Lampung</span> © 2024</p>
     </div>
-  </footer>
     
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <footer class="shadow-lg bg-subtle p-3"></footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
