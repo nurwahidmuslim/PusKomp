@@ -37,6 +37,11 @@ if(isset($_POST["signIn"]) ) {
   <style>
     body {
       background-color: rgb(197, 197, 241);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
     .btn-cancel {
       background-color: rgb(192, 192, 243);
@@ -54,12 +59,17 @@ if(isset($_POST["signIn"]) ) {
       background-color: rgb(170, 166, 199);
       color: white;
     }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+    }
   </style>
   <title>Sign In || Admin</title>
 </head>
 <body>
   <div class="container">
-    <div class="card p-2 mt-5">
+    <div class="card">
       <div class="position-absolute top-0 start-50 translate-middle">
         <img src="../../imgDB/profile-user.png" class="" alt="adminLogo" width="85px">
       </div>

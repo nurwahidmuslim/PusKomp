@@ -46,6 +46,15 @@ if(isset($_POST["tambah"]) ) {
     color: white;
   }
 
+  .btn-browse {
+    background-color: rgb(113, 113, 193); 
+    color: white; 
+  }
+
+  .btn-browse:hover {
+    background-color: rgb(170, 166, 199);
+    color: white; 
+  }
   /* Untuk tombol Reset */
   .btn-reset {
     background-color: rgb(113, 113, 193);
@@ -74,7 +83,7 @@ if(isset($_POST["tambah"]) ) {
           <a class="nav-link active" aria-current="page" href="../dashboardAdmin.php">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-success text-black" href="daftarBuku.php">Browse</a>
+          <a class="btn btn-browse" href="daftarBuku.php">Browse</a>
         </li>
       </ul>
     </div>

@@ -64,6 +64,17 @@ if(isset($_POST["search"]) ) {
   color: white;
 }
 
+.btn-tambahbuku {
+  background-color: rgb(113, 113, 193); 
+  color: white; 
+}
+
+.btn-tambahbuku:hover {
+  background-color: rgb(170, 166, 199);
+  color: white; 
+}
+
+
     </style>
   </head>
   <body>
@@ -81,7 +92,7 @@ if(isset($_POST["search"]) ) {
               <a class="nav-link active" aria-current="page" href="../dashboardAdmin.php">Dashboard</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-success text-black" href="tambahBuku.php">Tambah Buku</a>
+              <a class="btn btn-tambahbuku" href="tambahBuku.php">Tambah Buku</a>
             </li>
           </ul>
         </div>
